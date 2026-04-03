@@ -86,19 +86,21 @@ On the Rocky Linux node:
 
 ### 3d. Mission 1: Reconnaissance (20 minutes)
 
-1. **Write your inventory** at `inventory/hosts.yml`
+1. **Activate your environment**: `source venv/bin/activate`
+
+2. **Write your inventory** at `inventory/hosts.yml`
    - Define `debian` and `redhat` parent groups
    - Assign nodes to correct groups
    - Include connection details (host, port, user, key)
 
-2. **Create group_vars** at `inventory/group_vars/`
+3. **Create group_vars** at `inventory/group_vars/`
    - `debian.yml` — SSH service name, firewall package
    - `redhat.yml` — SSH service name, firewall package
    - `all.yml` — shared SSH settings (optional)
 
-3. **Test connectivity**: `ansible all -m ping`
+4. **Test connectivity**: `ansible all -m ping`
 
-4. **Reconnaissance**: Use ad-hoc commands to assess the post
+5. **Reconnaissance**: Use ad-hoc commands to assess the post
    - `ansible all -m shell -a "cat /etc/ssh/sshd_config | grep -i permit"`
    - `ansible debian -m shell -a "ufw status"`
    - `ansible all -m shell -a "cat /opt/fleet-db-creds.txt"`
@@ -106,7 +108,7 @@ On the Rocky Linux node:
    - `ansible debian -m shell -a "sysctl net.ipv4.ip_forward"`
    - `ansible debian -m shell -a "stat -c '%a' /etc/shadow"`
 
-5. **Document findings** in `RECON.md` — fill in every section
+6. **Document findings** in `RECON.md` — fill in every section
 
 ### 3e. Mission 2: Hardening (30 minutes)
 
