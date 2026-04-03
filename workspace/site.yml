@@ -1,0 +1,10 @@
+# ---
+# # Gateway Simulation — Operation: First Contact
+# # Uncomment and complete this play after building your role.
+# - name: Secure Forward Observation Post
+# #   hosts: all
+# #   become: true
+# #   vars_files:
+# #     - vault.yml
+# #   roles:
+# #     - fleet_hardening
