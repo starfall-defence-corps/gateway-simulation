@@ -29,7 +29,10 @@ cd gateway-simulation
 # 2. Launch the forward observation post
 make setup
 
-# 3. Start your timer. Read the briefing.
+# 3. Activate the virtual environment
+source venv/bin/activate
+
+# 4. Start your timer. Read the briefing.
 ```
 
 Read your orders: [Mission Briefing](docs/BRIEFING.md)
