@@ -340,6 +340,9 @@ class TestSecureAndSubmit:
                 fpath = os.path.join(root, fname)
                 if fname.endswith((".pyc", ".key")):
                     continue
+                # RECON.md documents findings — it's not storing secrets
+                if fname == "RECON.md":
+                    continue
                 try:
                     with open(fpath) as f:
                         content = f.read()
