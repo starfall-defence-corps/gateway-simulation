@@ -1,4 +1,4 @@
-.PHONY: doctor help setup test reset destroy ssh-web ssh-db ssh-comms
+.PHONY: doctor submit help setup test reset destroy ssh-web ssh-db ssh-comms
 
 help: ## Show available commands
 	@echo ""
@@ -17,6 +17,9 @@ setup: ## Launch the forward observation post (3 nodes)
 
 test: ## Run ARIA assessment verification
 	@bash scripts/check-work.sh
+
+submit: ## Submit your work for ARIA review (branch, commit, push, PR)
+	@bash $(ROOT_DIR)/scripts/submit.sh
 
 reset: ## Destroy and rebuild all nodes
 	@bash scripts/reset-lab.sh
