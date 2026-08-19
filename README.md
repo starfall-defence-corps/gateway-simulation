@@ -1,5 +1,7 @@
 # Starfall Defence Corps Academy
 
+> 🧭 [← 1.5 Clean House](https://github.com/starfall-defence-corps/mission-1-5-clean-house) · **You are here: Gateway Simulation** · [2.1 Weapon Handling Test →](https://github.com/starfall-defence-corps/mission-2-1-weapon-handling-test) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
+
 ## Gateway Simulation: Operation First Contact
 
 > *"The Voidborn have compromised a forward observation post. Three nodes exposed. 75 minutes. Everything you've learned."*
