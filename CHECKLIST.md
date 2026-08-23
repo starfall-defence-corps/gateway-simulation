@@ -1,7 +1,7 @@
 # Gateway Simulation: Operation First Contact — Progress Tracker
 
 **Assessment**: Gateway Simulation (75 minutes)
-**Rank Earned**: Ensign
+**Rank Earned**: Lieutenant
 
 **Start Time**: _______________
 **End Time**: _______________
