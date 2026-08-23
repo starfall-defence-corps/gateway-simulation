@@ -175,7 +175,11 @@ On the Rocky Linux node:
 | 65–75 min | **Passed** |
 | 75+ min | **RTB** (Return to Base — retry) |
 
-Record your start time. Record your end time. Be honest.
+Your time is measured automatically from `make setup`; ARIA reports the tier when all objectives pass.
+
+### Live service scoring
+
+From the moment you run `make setup`, ARIA's scoring engine polls every node's availability in the background — exactly as a real cyber-exercise scoreboard does. `make test` reports an **Exercise score** (out of 100) that blends **service availability across the whole run** with objective completion. Take a node down while you harden it and your availability — and your score — drops. Keep the post reachable while you secure it.
 
 ---
 

@@ -36,6 +36,11 @@ if [ -f "$ROOT_DIR/.aria_start" ]; then
     fi
 fi
 
+# #56 — hand the availability log to ARIA for the exercise score.
+if [ -f "$ROOT_DIR/.aria_score.jsonl" ]; then
+    export ARIA_SCORE_LOG="$ROOT_DIR/.aria_score.jsonl"
+fi
+
 # Run tests.
 ARIA_COLOR=1 python3 -m pytest "$TEST_FILE" --tb=no --no-header -q 2>&1 1>/dev/null \
     | grep -vE '^(assert |FAILED| *\+  where|  *\+  |[0-9]+ (passed|failed))' || true
