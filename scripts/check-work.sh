@@ -27,6 +27,15 @@ if [ -f "$ROOT_DIR/venv/bin/activate" ]; then
     source "$ROOT_DIR/venv/bin/activate"
 fi
 
+# #50 — real wall-clock for the ARIA performance tier. make setup stamps the
+# start; the plugin reads ARIA_ELAPSED_MIN and prints the tier on completion.
+if [ -f "$ROOT_DIR/.aria_start" ]; then
+    _aria_start="$(cat "$ROOT_DIR/.aria_start" 2>/dev/null || true)"
+    if [ -n "${_aria_start:-}" ]; then
+        export ARIA_ELAPSED_MIN=$(( ( $(date +%s) - _aria_start ) / 60 ))
+    fi
+fi
+
 # Run tests.
 ARIA_COLOR=1 python3 -m pytest "$TEST_FILE" --tb=no --no-header -q 2>&1 1>/dev/null \
     | grep -vE '^(assert |FAILED| *\+  where|  *\+  |[0-9]+ (passed|failed))' || true
@@ -42,16 +51,10 @@ if [ $EXIT_CODE -eq 0 ]; then
     echo -e "  observation post. The Voidborn threat"
     echo -e "  has been neutralised."
     echo -e ""
-    echo -e "  RANK EARNED: ENSIGN"
     echo -e "  The Starfall Defence Corps salutes you."
     echo -e "  ==============================================${RESET}"
-    echo ""
-    echo -e "  ${YELLOW}${BOLD}Performance Tiers:${RESET}"
-    echo -e "  ${DIM}  Under 45 min  — Ace Cadet"
-    echo -e "    45–55 min    — Distinguished"
-    echo -e "    55–65 min    — Qualified"
-    echo -e "    65–75 min    — Passed"
-    echo -e "    75+ min      — RTB (Return to Base)${RESET}"
+    # Rank earned + performance tier are emitted above by the ARIA reporter
+    # (aria#9 plugin): a single source of truth, timed from make setup.
 else
     echo -e "  ${RED}${BOLD}=============================================="
     echo -e "  ARIA: Deficiencies detected."

@@ -89,3 +89,6 @@ echo "  Mission brief:  docs/BRIEFING.md"
 echo "  Verify work:    make test"
 echo "=============================================="
 echo ""
+
+# #50 — stamp mission start for the ARIA performance tier (make test reads it)
+date +%s > "$ROOT_DIR/.aria_start" 2>/dev/null || true
