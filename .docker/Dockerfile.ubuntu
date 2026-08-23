@@ -45,7 +45,7 @@ RUN echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf \
 # Weak file permissions
 RUN chmod 0644 /etc/shadow
 
-# Colonel Hardcoded-Password's planted credentials
+# Warlord Hardcoded-Password's planted credentials
 RUN echo -e "# Fleet Database Credentials — DO NOT SHARE\nfleet_db_user: admin\nfleet_db_pass: V01dborn_Hunter_2187\nfleet_api_key: sk-sdc-1a2b3c4d5e6f7g8h9i0j" > /opt/fleet-db-creds.txt
 
 # Create cadet user for SSH access
