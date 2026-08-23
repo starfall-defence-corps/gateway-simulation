@@ -183,7 +183,7 @@ Record your start time. Record your end time. Be honest.
 
 **Commander's Final Order**: This is the test. Everything you have learned. Every module, every skill, under the clock. The forward observation post depends on you. Secure it. Document it. Encrypt it. Deploy it.
 
-When ARIA confirms all three missions, you have earned the rank of **Ensign**.
+When ARIA confirms all three missions, you have earned the rank of **Lieutenant**.
 
 The Starfall Defence Corps salutes your service, Cadet. Now prove you're ready.
 
