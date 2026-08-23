@@ -10,7 +10,7 @@
 
 This is the **Gateway Simulation** — the capstone assessment for Module 1 (Basic Training). You must combine every skill from Missions 1.1–1.5 to secure a compromised observation post under time pressure. No step-by-step guide. No hints. Just a briefing and a timer.
 
-**Pass this simulation and earn the rank of Ensign.**
+**Pass this simulation and earn the rank of Lieutenant.**
 
 ## Prerequisites
 
