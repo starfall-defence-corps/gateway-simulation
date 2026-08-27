@@ -1,6 +1,6 @@
 # Starfall Defence Corps Academy
 
-> 🧭 [← 1.5 Clean House](https://github.com/starfall-defence-corps/mission-1-5-clean-house) · **You are here: Gateway Simulation** · [2.1 Weapon Handling Test →](https://github.com/starfall-defence-corps/mission-2-1-weapon-handling-test) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
+> 🧭 [← 1.6 Inventory from Nothing](https://github.com/starfall-defence-corps/mission-1-6-inventory-from-nothing) · **You are here: Gateway Simulation** · [2.1 Weapon Handling Test →](https://github.com/starfall-defence-corps/mission-2-1-weapon-handling-test) · [🏠 Academy Hub](https://github.com/starfall-defence-corps/sdc-academy)
 
 > ☁️ **No Docker on your machine?** Create your own copy first (Use this template), then on **your** repo: **Code → Codespaces → Create codespace** — everything is preinstalled. First boot takes ~5 min (one-time); after that it starts fast.
 
@@ -8,13 +8,13 @@
 
 > *"The Voidborn have compromised a forward observation post. Three nodes exposed. 75 minutes. Everything you've learned."*
 
-This is the **Gateway Simulation** — the capstone assessment for Module 1 (Basic Training). You must combine every skill from Missions 1.1–1.5 to secure a compromised observation post under time pressure. No step-by-step guide. No hints. Just a briefing and a timer.
+This is the **Gateway Simulation** — the capstone assessment for Module 1 (Basic Training). You must combine every skill from Missions 1.1–1.6 to secure a compromised observation post under time pressure. No step-by-step guide. No hints. Just a briefing and a timer.
 
 **Pass this simulation and earn the rank of Lieutenant.**
 
 ## Prerequisites
 
-- Completed Missions 1.1 through 1.5
+- Completed Missions 1.1 through 1.6
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (with Docker Compose v2)
 - [GNU Make](https://www.gnu.org/software/make/)
 - Python 3.10+ (for test environment)
