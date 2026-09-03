@@ -183,7 +183,19 @@ From the moment you run `make setup`, ARIA's scoring engine polls every node's a
 
 ---
 
-## 5. COMMAND AND SIGNAL
+## 5. SUBMIT
+
+From the project root:
+
+```bash
+make submit
+```
+
+This branches, commits, pushes, and opens your review pull request in one command. If you added an `ANTHROPIC_API_KEY` secret (see README), ARIA posts a review on the PR.
+
+---
+
+## 6. COMMAND AND SIGNAL
 
 **Commander's Final Order**: This is the test. Everything you have learned. Every module, every skill, under the clock. The forward observation post depends on you. Secure it. Document it. Encrypt it. Deploy it.
 

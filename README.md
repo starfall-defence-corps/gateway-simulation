@@ -30,13 +30,16 @@ This is the **Gateway Simulation** — the capstone assessment for Module 1 (Bas
 git clone https://github.com/YOUR-USERNAME/gateway-simulation.git
 cd gateway-simulation
 
-# 2. Launch the forward observation post
+# 2. Check your machine is mission-ready
+make doctor
+
+# 3. Launch the forward observation post
 make setup
 
-# 3. Activate the virtual environment
+# 4. Activate the virtual environment
 source venv/bin/activate
 
-# 4. Start your timer. Read the briefing.
+# 5. Start your timer. Read the briefing.
 ```
 
 Read your orders: [Mission Briefing](docs/BRIEFING.md)
@@ -74,14 +77,18 @@ Read your orders: [Mission Briefing](docs/BRIEFING.md)
 
 ```
 make help       Show available commands
+make doctor     Check your machine is mission-ready (Docker, ports, tools)
 make setup      Launch the forward observation post (3 nodes)
 make test       Ask ARIA to verify your work
+make submit     Submit your work for ARIA review (branch, commit, push, PR)
 make reset      Destroy and rebuild all nodes
 make destroy    Tear down everything (containers, keys, venv)
 make ssh-web    SSH into sdc-fwd-web (Ubuntu)
 make ssh-db     SSH into sdc-fwd-db (Rocky Linux)
 make ssh-comms  SSH into sdc-fwd-comms (Ubuntu)
 ```
+
+> **Note:** `make submit` uses the [GitHub CLI](https://cli.github.com/) — install `gh` and run `gh auth login` once before your first submission.
 
 ## Assessment Structure
 
