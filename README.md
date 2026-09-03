@@ -88,6 +88,8 @@ make ssh-db     SSH into sdc-fwd-db (Rocky Linux)
 make ssh-comms  SSH into sdc-fwd-comms (Ubuntu)
 ```
 
+> **Note:** `make submit` uses the [GitHub CLI](https://cli.github.com/) — install `gh` and run `gh auth login` once before your first submission.
+
 ## Assessment Structure
 
 | Mission | Time | What ARIA Checks |
