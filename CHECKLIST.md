@@ -58,3 +58,5 @@
 | 75+ min | RTB — retry |
 
 **My Rating**: _______________
+
+**Next stop**: [Mission 2.1 — Weapon Handling Test](https://github.com/starfall-defence-corps/mission-2-1-weapon-handling-test)
