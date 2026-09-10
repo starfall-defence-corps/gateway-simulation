@@ -19,12 +19,13 @@ This is everything you have trained to fix.
 
 ### 1b. Friendly Forces
 
-Over five missions, you have learned:
+Over six missions, you have learned:
 - Inventory and ad-hoc commands (1.1)
 - Playbook fundamentals and SSH hardening (1.2)
 - Service management, packages, and firewall (1.3)
 - Variables, templates, and multi-OS support (1.4)
 - Roles, Vault, and Git workflow (1.5)
+- Host discovery, fingerprinting, and dynamic inventory (1.6)
 
 Now prove you can do it all. Under pressure. From scratch.
 
