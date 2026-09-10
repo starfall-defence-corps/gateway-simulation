@@ -17,6 +17,7 @@ This is the **Gateway Simulation** — the capstone assessment for Module 1 (Bas
 - Completed Missions 1.1 through 1.6
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) (with Docker Compose v2)
 - [GNU Make](https://www.gnu.org/software/make/)
+- **Ansible**: provided by the lab — `make setup` builds a local venv with `ansible-core`; no host install needed
 - Python 3.10+ (for test environment)
   - On Debian/Ubuntu: `sudo apt install python3-venv`
 - Git
