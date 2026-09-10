@@ -1,5 +1,7 @@
 # Gateway Simulation — Troubleshooting Only
 
+> 📚 Deeper reference: [FM-1 — Ansible Module Reference](https://github.com/starfall-defence-corps/sdc-academy/blob/main/field-manuals/FM-1-ansible-reference.md) · [FM-2 — YAML & Jinja2 Quick Reference](https://github.com/starfall-defence-corps/sdc-academy/blob/main/field-manuals/FM-2-yaml-jinja2-reference.md)
+
 **This is an assessment.** No progressive hints. No spoilers. You have completed Module 1 — you know what to do.
 
 This file exists only for common technical errors.
