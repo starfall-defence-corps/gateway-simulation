@@ -32,7 +32,7 @@ Now prove you can do it all. Under pressure. From scratch.
 
 **ARIA** will verify your work across three missions. Run `make test` at any time.
 
-**No hints file.** You have completed Module 1. You know what to do.
+**No mission hints.** [docs/HINTS.md](HINTS.md) is troubleshooting-only (lab/environment issues). You have completed Module 1. You know what to do.
 
 ---
 
