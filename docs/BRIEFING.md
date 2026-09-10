@@ -89,7 +89,7 @@ On the Rocky Linux node:
 
 1. **Activate your environment**: `source venv/bin/activate`
 
-2. **Write your inventory** at `inventory/hosts.yml`
+2. **Write your inventory** at `inventory/hosts.yml` — the workspace deliberately ships no `inventory/` scaffold; building the fleet map from the asset table is part of the assessment
    - Define `debian` and `redhat` parent groups
    - Assign nodes to correct groups
    - Include connection details (host, port, user, key)
