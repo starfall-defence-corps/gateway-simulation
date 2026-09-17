@@ -139,7 +139,9 @@ On the Rocky Linux node:
    chmod 600 workspace/.vault-pass
    ```
 
-2. **Uncomment** `vault_password_file = workspace/.vault-pass` in `ansible.cfg` (the root copy — that's what Ansible reads when you run from the project root)
+2. **Uncomment the vault password line in both `ansible.cfg` files** (each copy is read from its own directory):
+   - root `ansible.cfg`: `vault_password_file = workspace/.vault-pass` — used when you run from the project root
+   - `workspace/ansible.cfg`: `vault_password_file = .vault-pass` — used by ARIA's `make test`, which runs Ansible from `workspace/`
 
 3. **Create and encrypt `workspace/vault.yml`**:
    ```bash
