@@ -52,7 +52,7 @@ if [ $EXIT_CODE -eq 0 ]; then
     echo -e "  ARIA: All objectives verified."
     echo -e "  Gateway Simulation status: COMPLETE"
     echo -e ""
-    echo -e "  Cadet, you have secured the forward"
+    echo -e "  Lieutenant, you have secured the forward"
     echo -e "  observation post. The Voidborn threat"
     echo -e "  has been neutralised."
     echo -e ""
