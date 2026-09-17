@@ -65,7 +65,7 @@ This simulation tests whether you can combine every skill from Module 1 without 
 | `sdc-fwd-db` | Rocky Linux 9 | 2232 | 172.31.0.12 |
 | `sdc-fwd-comms` | Ubuntu 22.04 | 2233 | 172.31.0.13 |
 
-**SSH user**: `cadet` (key-based auth, key at `.ssh/cadet_key`)
+**SSH user**: `cadet` (key-based auth, key at `workspace/.ssh/cadet_key`)
 
 ### 3c. Known Compromises
 
@@ -85,16 +85,18 @@ On the Rocky Linux node:
 
 **Note**: The credential file exists on ALL nodes. Check every one.
 
+**One directory for everything**: run every command in this simulation — `ansible ...` and `make ...` — from the **project root** (the folder with the `Makefile`). An `ansible.cfg` lives both there and in `workspace/`, so Ansible works from either; the steps below assume the project root throughout.
+
 ### 3d. Mission 1: Reconnaissance (20 minutes)
 
 1. **Activate your environment**: `source venv/bin/activate`
 
-2. **Write your inventory** at `inventory/hosts.yml` — the workspace deliberately ships no `inventory/` scaffold; building the fleet map from the asset table is part of the assessment
+2. **Write your inventory** at `workspace/inventory/hosts.yml` — the workspace deliberately ships no `inventory/` scaffold; building the fleet map from the asset table is part of the assessment
    - Define `debian` and `redhat` parent groups
    - Assign nodes to correct groups
    - Include connection details (host, port, user, key)
 
-3. **Create group_vars** at `inventory/group_vars/`
+3. **Create group_vars** at `workspace/inventory/group_vars/`
    - `debian.yml` — SSH service name, firewall package
    - `redhat.yml` — SSH service name, firewall package
    - `all.yml` — shared SSH settings (optional)
@@ -109,11 +111,11 @@ On the Rocky Linux node:
    - `ansible debian -m shell -a "sysctl net.ipv4.ip_forward"`
    - `ansible debian -m shell -a "stat -c '%a' /etc/shadow"`
 
-6. **Document findings** in `RECON.md` — fill in every section
+6. **Document findings** in `workspace/RECON.md` — fill in every section
 
 ### 3e. Mission 2: Hardening (30 minutes)
 
-1. **Create the role**: `ansible-galaxy init roles/fleet_hardening`
+1. **Create the role**: `ansible-galaxy init workspace/roles/fleet_hardening`
 
 2. **Build the role** — at minimum:
    - `defaults/main.yml` — SSH settings, service names, firewall packages
@@ -121,11 +123,11 @@ On the Rocky Linux node:
    - `handlers/main.yml` — SSH restart handler
    - `templates/` — `sshd_config.j2`, `motd.j2`
 
-3. **Write site.yml** — uncomment and complete (hosts, become, roles)
+3. **Write `workspace/site.yml`** — uncomment and complete (hosts, become, roles)
 
-4. **Syntax check**: `ansible-playbook site.yml --syntax-check`
+4. **Syntax check**: `ansible-playbook workspace/site.yml --syntax-check`
 
-5. **Deploy**: `ansible-playbook site.yml`
+5. **Deploy**: `ansible-playbook workspace/site.yml`
 
 6. **Verify idempotency**: Run again — `changed=0` on all hosts
 
@@ -133,27 +135,29 @@ On the Rocky Linux node:
 
 1. **Create vault password file**:
    ```bash
-   echo 'first-contact' > .vault-pass
-   chmod 600 .vault-pass
+   echo 'first-contact' > workspace/.vault-pass
+   chmod 600 workspace/.vault-pass
    ```
 
-2. **Uncomment** `vault_password_file = .vault-pass` in `ansible.cfg`
+2. **Uncomment the vault password line in both `ansible.cfg` files** (each copy is read from its own directory):
+   - root `ansible.cfg`: `vault_password_file = workspace/.vault-pass` — used when you run from the project root
+   - `workspace/ansible.cfg`: `vault_password_file = .vault-pass` — used by ARIA's `make test`, which runs Ansible from `workspace/`
 
-3. **Create and encrypt vault.yml**:
+3. **Create and encrypt `workspace/vault.yml`**:
    ```bash
    # Create with your sensitive values
-   cat > vault.yml << 'EOF'
+   cat > workspace/vault.yml << 'EOF'
    vault_ssh_login_grace_time: 30
    vault_banner_message: "STARFALL DEFENCE CORPS — FORWARD OBSERVATION POST"
    EOF
-   ansible-vault encrypt vault.yml
+   ansible-vault encrypt workspace/vault.yml
    ```
 
-4. **Update site.yml** to include `vars_files: [vault.yml]`
+4. **Update `workspace/site.yml`** to include `vars_files: [vault.yml]`
 
 5. **Update role defaults** to reference vault variables where appropriate
 
-6. **Run final deployment**: `ansible-playbook site.yml`
+6. **Run final deployment**: `ansible-playbook workspace/site.yml`
 
 7. **Verify**: `make test` — all three missions must pass
 
@@ -161,7 +165,7 @@ On the Rocky Linux node:
 
 - No looking at other missions' solution files during the assessment
 - You may consult official Ansible documentation
-- The `files/sysctl-hardened.conf` is provided — use it
+- The `workspace/files/sysctl-hardened.conf` is provided — use it
 - Vault password must be `first-contact` (ARIA needs to verify vault contents)
 
 ---

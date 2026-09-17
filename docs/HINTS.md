@@ -10,7 +10,7 @@ This file exists only for common technical errors.
 
 ## SSH Connectivity
 
-**"Permission denied (publickey)"**: Check that `.ssh/cadet_key` exists and has permissions 600. Re-run `make setup` if needed.
+**"Permission denied (publickey)"**: Check that `workspace/.ssh/cadet_key` exists and has permissions 600. Re-run `make setup` if needed.
 
 **"Connection refused"**: The containers may not be running. Check `docker ps`. Re-run `make setup`.
 
@@ -20,15 +20,15 @@ This file exists only for common technical errors.
 
 ## Vault Issues
 
-**"Decryption failed"**: Your `.vault-pass` content doesn't match the password used to encrypt `vault.yml`. The password should be `first-contact`.
+**"Decryption failed"**: Your `workspace/.vault-pass` content doesn't match the password used to encrypt `vault.yml`. The password should be `first-contact`.
 
-**"vault_password_file" error**: If you haven't created `.vault-pass` yet, keep that line commented out in `ansible.cfg`. Uncomment it only after creating the file.
+**"vault_password_file" error**: If you haven't created `workspace/.vault-pass` yet, keep that line commented out in `ansible.cfg`. Uncomment it only after creating the file.
 
 ---
 
 ## Role Not Found
 
-**"the role 'fleet_hardening' was not found"**: The role must be at `workspace/roles/fleet_hardening/`. Check `roles_path = roles` in `ansible.cfg`. Run Ansible from the `workspace/` directory.
+**"the role 'fleet_hardening' was not found"**: The role must be at `workspace/roles/fleet_hardening/`. Check `roles_path` in `ansible.cfg` — the root copy points at `workspace/roles`, so this resolves whether you run from the project root or from `workspace/`.
 
 ---
 
